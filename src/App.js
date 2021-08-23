@@ -3,7 +3,10 @@ import Hello from './Hello'
 
 function App() {
   return (
-    <input />
+    <div>
+      <Hello></Hello>
+      <div>Hello</div>
+    </div>
   );
 }
 
