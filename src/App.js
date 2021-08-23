@@ -2,10 +2,11 @@ import React from 'react';
 import Hello from './Hello'
 
 function App() {
+  const name = 'react'
   return (
     <>
       <Hello></Hello>
-      <div>Hello</div>
+      <div>{name}</div>
     </>
   );
 }
