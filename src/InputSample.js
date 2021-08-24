@@ -5,6 +5,9 @@ function InputSample() {
     const onChange = (e) => {
         setText(e.target.value);
     }
+    const onReset = () => {
+        setText('');
+    }
     return (
         <div>
             <input onChange={onChange} value={text}/>
