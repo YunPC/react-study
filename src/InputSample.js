@@ -1,15 +1,17 @@
 import React, {useState} from 'react';
 
 function InputSample() {
+    const [text, setText] = useState('');
     const onChange = (e) => {
-        console.log(e.target.value);
+        setText(e.target.value);
     }
     return (
         <div>
-            <input onChange={onChange}/>
+            <input onChange={onChange} value={text}/>
             <button>초기화</button>
             <div>
                 <b>값: </b>
+                {text}
             </div>
         </div>
     )
