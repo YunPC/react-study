@@ -1,5 +1,4 @@
 import React from "react";
-import Hello from "./Hello";
 
 function Wrapper({children}) {
     const style = {
