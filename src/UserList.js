@@ -3,11 +3,11 @@ import React, {useEffect} from 'react';
 function User({ user, onRemove, onToggle }) {
   const { username, email, id, active } = user;
   useEffect(() => {
-    console.log('컴포넌트가 화면에 나타납니다.')
+    console.log('user 값이 설정됨', user);
     return () => {
-      console.log('컴포넌트가 화면에서 사라짐')
+      console.log('user 값이 바뀌기 전', user)
     }
-  }, []);
+  }, [user])
   return (
     <div>
       <b style={{
