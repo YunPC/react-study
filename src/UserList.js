@@ -4,6 +4,9 @@ function User({ user, onRemove, onToggle }) {
   const { username, email, id, active } = user;
   useEffect(() => {
     console.log('컴포넌트가 화면에 나타납니다.')
+    return () => {
+      console.log('컴포넌트가 화면에서 사라짐')
+    }
   }, []);
   return (
     <div>
