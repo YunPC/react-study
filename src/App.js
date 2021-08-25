@@ -1,7 +1,8 @@
-import React, {useRef, useState} from 'react';
+import React, {useRef, useState, useMemo} from 'react';
 import './App.css'
 import CreateUser from './CreateUser';
 import UserList from './UserList';
+
 
 function countActiveUsers(users) {
   console.log('활성 사용자 세는중...')
@@ -69,7 +70,7 @@ function App() {
     setUsers(users.map(user => user.id === id ? {...user, active: !user.active} : user))
   }
 
-  const count = countActiveUsers(users);
+  const count = useMemo(() => countActiveUsers(users), [users]);
 
   return (
     <>
