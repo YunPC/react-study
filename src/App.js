@@ -3,6 +3,11 @@ import './App.css'
 import CreateUser from './CreateUser';
 import UserList from './UserList';
 
+function countActiveUsers(users) {
+  console.log('활성 사용자 세는중...')
+  return users.filter(user => user.active).length;
+}
+
 function App() {
   const [inputs, setInputs] = useState({
     username: '',
