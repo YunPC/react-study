@@ -69,6 +69,8 @@ function App() {
     setUsers(users.map(user => user.id === id ? {...user, active: !user.active} : user))
   }
 
+  const count = countActiveUsers(users);
+
   return (
     <>
     <CreateUser username = {username}
@@ -76,6 +78,7 @@ function App() {
     onChange={onChange}
     onCreate={onCreate}/>
     <UserList users={users} onRemove={onRemove} onToggle={onToggle}/>
+    <div>활성 사용자수 : {count}</div>
     </>
   );
 }
