@@ -1,7 +1,7 @@
 import React from 'react';
 
 function User({user, onRemove}){
-  const {useranme, email, id} = user;
+  const {username, email, id} = user;
   return(
     <div>
         <b>{username}</b> <span>{email}</span>
