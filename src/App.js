@@ -1,5 +1,6 @@
 import React, {useRef} from 'react';
 import './App.css'
+import CreateUser from './CreateUser';
 import UserList from './UserList';
 
 function App() {
@@ -29,7 +30,10 @@ function App() {
   }
 
   return (
+    <>
+    <CreateUser/>
     <UserList users={users}/>
+    </>
   );
 }
 
