@@ -7,14 +7,18 @@ function Child(){
   return <div>안녕하세요? {text}</div>
 }
 
-function Parent({text}){
-  return <Child text={text}/>
+function Parent(){
+  return <Child />
 }
-function GrandParent({text}){
-  return <Parent text={text}/>
+function GrandParent(){
+  return <Parent />
 }
 function ContextSample(){
-  return <GrandParent text="GOOD"/>
+  return (
+    <MyContext.Provider value="GOOD">
+      <GrandParent />
+    </MyContext.Provider>
+  )
 }
 
 export default ContextSample;
