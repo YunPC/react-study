@@ -1,6 +1,9 @@
 import React, {createContext, useContext} from 'react';
 
-function Child({text}){
+const MyContext = createContext('defaultValue');
+
+function Child(){
+  const text = useContext(MyContext);
   return <div>안녕하세요? {text}</div>
 }
 
