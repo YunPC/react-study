@@ -8,6 +8,35 @@ function countActiveUsers(users) {
   return users.filter(user => user.active).length;
 }
 
+const initialState = {
+  inputs: {
+    username: '',
+    email: '',
+  },
+  users: [
+    {
+      id: 1,
+      username: 'velopert',
+      email: 'public.velopert@gmail.com',
+      active: true
+    },
+    {
+      id: 2,
+      username: 'tester',
+      email: 'tester@example.com',
+      active: false
+    },
+    {
+      id: 3,
+      username: 'liz',
+      email: 'lix@example.com',
+      active: false
+    }
+  ]
+
+}
+
+
 function App() {
   const [inputs, setInputs] = useState({
     username: '',
