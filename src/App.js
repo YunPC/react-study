@@ -37,7 +37,6 @@ function reducer(state, action) {
   switch (action.type){
     case 'CREATE_USER':
       return {
-        inputs: initialState.inputs,
         users: state.users.concat(action.user)
       }
     case 'TOGGLE_USER':
@@ -75,8 +74,8 @@ function App() {
         email,
       }
     })
-    nextId.current += 1;
     reset();
+    nextId.current += 1;
   }, [username, email, reset])
 
   const onToggle = useCallback(id => {
@@ -97,7 +96,7 @@ function App() {
 
   return (
     <>
-    <CreateUser username={username} eamil={email} onChange={onChange} onCreate={onCreate}/>
+    <CreateUser username={username} email={email} onChange={onChange} onCreate={onCreate}/>
     <UserList users={users} onToggle={onToggle} onRemove={onRemove}/>
     <div>활성 사용자수 : {count}</div>
     </>
