@@ -108,11 +108,13 @@ function App() {
     })
   }, [])
 
+  const count = useMemo(() => countActiveUsers(users), [users])
+
   return (
     <>
     <CreateUser username={username} eamil={email} onChange={onChange} onCreate={onCreate}/>
     <UserList users={users} onToggle={onToggle} onRemove={onRemove}/>
-    <div>활성 사용자수 : 0</div>
+    <div>활성 사용자수 : {count}</div>
     </>
   );
 }
