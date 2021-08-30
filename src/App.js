@@ -57,7 +57,7 @@ function reducer(state, action) {
 
 function App() {
   const [state, dispatch] = useReducer(reducer, initialState)
-  const [form, onChange, reset] = useInputs({
+  const [form, formDispatch] = useInputs({
     username: '',
     email: ''
   })
@@ -74,9 +74,21 @@ function App() {
         email,
       }
     })
-    reset();
+    formDispatch({
+      type: 'RESET_INPUT',
+      initialState: {
+        username: '',
+        email: ''
+      }
+    })
     nextId.current += 1;
-  }, [username, email, reset])
+  }, [username, email, formDispatch])
+
+  const onChange = e => formDispatch({
+    type: 'CHANGE_INPUT',
+    name: e.target.name,
+    value: e.target.value
+  })
 
   const onToggle = useCallback(id => {
     dispatch({
