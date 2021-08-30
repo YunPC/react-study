@@ -1,6 +1,7 @@
 import React, {useRef, useReducer , useMemo, useCallback} from 'react';
 import CreateUser from './CreateUser';
 import UserList from './UserList';
+import useInputs from './useInputs';
 
 
 function countActiveUsers(users) {
@@ -9,10 +10,6 @@ function countActiveUsers(users) {
 }
 
 const initialState = {
-  inputs: {
-    username: '',
-    email: '',
-  },
   users: [
     {
       id: 1,
@@ -38,17 +35,8 @@ const initialState = {
 
 function reducer(state, action) {
   switch (action.type){
-    case 'CHANGE_INPUT': 
-      return {
-        ...state,
-        inputs: {
-          ...state.inputs,
-          [action.name]: action.value
-        }
-      }
     case 'CREATE_USER':
       return {
-        inputs: initialState.inputs,
         users: state.users.concat(action.user)
       }
     case 'TOGGLE_USER':
@@ -69,18 +57,13 @@ function reducer(state, action) {
 
 function App() {
   const [state, dispatch] = useReducer(reducer, initialState)
+  const [form, formDispatch] = useInputs({
+    username: '',
+    email: ''
+  })
+  const {username, email} = form
   const nextId = useRef(4);
   const {users} = state;
-  const {username, email} = state.inputs;
-
-  const onChange = useCallback(e => {
-    const {name, value} = e.target;
-    dispatch({
-      type: 'CHANGE_INPUT',
-      name,
-      value
-    })
-  }, [])
 
   const onCreate = useCallback(() => {
     dispatch({
@@ -91,8 +74,21 @@ function App() {
         email,
       }
     })
+    formDispatch({
+      type: 'RESET_INPUT',
+      initialState: {
+        username: '',
+        email: ''
+      }
+    })
     nextId.current += 1;
-  }, [username, email])
+  }, [username, email, formDispatch])
+
+  const onChange = e => formDispatch({
+    type: 'CHANGE_INPUT',
+    name: e.target.name,
+    value: e.target.value
+  })
 
   const onToggle = useCallback(id => {
     dispatch({
@@ -112,7 +108,7 @@ function App() {
 
   return (
     <>
-    <CreateUser username={username} eamil={email} onChange={onChange} onCreate={onCreate}/>
+    <CreateUser username={username} email={email} onChange={onChange} onCreate={onCreate}/>
     <UserList users={users} onToggle={onToggle} onRemove={onRemove}/>
     <div>활성 사용자수 : {count}</div>
     </>
