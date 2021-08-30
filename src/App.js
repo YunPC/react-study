@@ -1,5 +1,4 @@
 import React, {useRef, useState, useMemo, useCallback} from 'react';
-import './App.css'
 import CreateUser from './CreateUser';
 import UserList from './UserList';
 
@@ -53,7 +52,7 @@ function App() {
       username,
       email,
     }
-    setUsers(users.concat(user))
+    setUsers([...users, user])
     setInputs({
       username: '',
       email: ''
@@ -71,7 +70,6 @@ function App() {
   }, [users])
 
   const count = useMemo(() => countActiveUsers(users), [users]);
-
   return (
     <>
     <CreateUser username = {username}
