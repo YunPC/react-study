@@ -1,4 +1,4 @@
-import React, {useRef, useState, useMemo, useCallback} from 'react';
+import React, {useRef, useReducer , useMemo, useCallback} from 'react';
 import CreateUser from './CreateUser';
 import UserList from './UserList';
 
@@ -36,13 +36,39 @@ const initialState = {
 
 }
 
+function reducer(state, action) {
+  switch (action.type){
+    case 'CHANGE_INPUT': 
+      return {
+        ...state,
+        inputs: {
+          ...state.inputs,
+          [action.name]: action.value
+        }
+      }
+    default:
+      throw new Error('Unhandled action');
+  }
+}
 
 function App() {
-  
+  const [state, dispatch] = useReducer(reducer, initialState)
+  const {users} = state;
+  const {username, email} = state.inputs;
+
+  const onChange = useCallback(e => {
+    const {name, value} = e.target;
+    dispatch({
+      type: 'CHANGE_INPUT',
+      name,
+      value
+    })
+  })
+
   return (
     <>
-    <CreateUser />
-    <UserList users={[]}/>
+    <CreateUser username={username} eamil={email} onChange={onChange}/>
+    <UserList users={users}/>
     <div>활성 사용자수 : 0</div>
     </>
   );
