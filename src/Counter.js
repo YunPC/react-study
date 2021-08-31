@@ -12,14 +12,26 @@ class Counter extends React.Component {
   }
 
   handleIncrease = () => {
-    this.setState({
-      counter: this.state.counter + 1
-    })
+    // this.setState({
+    //   counter: this.state.counter + 1
+    // })
+    this.setState(state => ({
+      counter: state.counter + 1
+    }))
   }
 
   handleDecrease = () => {
     this.setState({
       counter: this.state.counter - 1
+    })
+  }
+
+  handleToggle = () => {
+    this.setState({
+      updateMe: {
+        ...this.state.updateMe
+        toggleMe: !this.state.updateMe.toggleMe
+      }
     })
   }
 
