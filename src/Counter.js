@@ -2,17 +2,11 @@ import React, { useReducer } from 'react'
 
 class Counter extends React.Component {
 
-  constructor(props){
-    super(props);
-    this.handleIncrease = this.handleIncrease.bind(this);
-    this.handleDecrease = this.handleDecrease.bind(this);
-  }
-
-  handleIncrease(){
+  handleIncrease = () => {
     console.log('increase');
   }
 
-  handleDecrease(){
+  handleDecrease = () => {
     console.log('decrease');
   }
 
