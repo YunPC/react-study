@@ -29,7 +29,7 @@ class Counter extends React.Component {
   handleToggle = () => {
     this.setState({
       updateMe: {
-        ...this.state.updateMe
+        ...this.state.updateMe,
         toggleMe: !this.state.updateMe.toggleMe
       }
     })
