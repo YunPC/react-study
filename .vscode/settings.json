@@ -1,0 +1,184 @@
+{
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features",
+    "editor.formatOnSave": false
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": false
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features",
+    "editor.formatOnSave": false
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features",
+    "editor.formatOnSave": false
+  },
+  "[markdown]": {
+    "editor.formatOnSave": false,
+    "editor.quickSuggestions": true,
+    "editor.wordWrap": "on"
+  },
+  "[sass]": {
+    "editor.defaultFormatter": "syler.sass-indented",
+    "editor.formatOnSave": false,
+    "editor.quickSuggestions": true
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "editor.quickSuggestions": true
+  },
+
+  "autoimport.semicolon": false,
+
+  "comment-divider.mainHeaderAlign": "left",
+  "comment-divider.subheaderAlign": "left",
+  "css.completion.completePropertyWithSemicolon": true,
+  "css.validate": true,
+  "css.lint.unknownAtRules": "ignore",
+
+  "code-runner.clearPreviousOutput": true,
+  "code-runner.defaultLanguage": "javascript",
+  "code-runner.executorMap": {
+    "javascript": "node",
+    "typescript": "ts-node",
+    "sass": "sass --style expanded",
+    "scss": "scss --style expanded"
+  },
+  "code-runner.saveFileBeforeRun": true,
+  "code-runner.executorMapByFileExtension": {
+    ".es6": "node"
+  },
+  "code-runner.showExecutionMessage": false,
+
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.fontLigatures": true,
+  
+  // 작업공간(Workspace) 설정: 아래 주석이 활성화 되면 Formatting Toogle 확장이 작동하지 않음
+  // "editor.formatOnSave": true,
+  
+  "editor.linkedEditing": true,
+  "editor.renderControlCharacters": true,
+  "editor.renderLineHighlight": "none",
+  "editor.renderWhitespace": "none",
+  "editor.snippetSuggestions": "top",
+  "editor.tabSize": 2,
+  "editor.minimap.enabled": false,
+  "emmet.includeLanguages": {
+    "postcss": "css",
+    "javascript": "javascriptreact"
+  },
+  "emmet.showSuggestionsAsSnippets": true,
+  "emmet.syntaxProfiles": {
+    "attr_case": "lower",
+    "attr_quotes": "double",
+    "html": "xhtml",
+    "inline_break": 3,
+    "self_closing_tag": "xhtml",
+    "tag_case": "lower"
+  },
+  "emmet.triggerExpansionOnTab": true,
+  "emmet.variables": {
+    "charset": "UTF-8",
+    "lang": "ko-KR"
+  },
+  "eslint.alwaysShowStatus": true,
+  "eslint.codeAction.showDocumentation": {
+    "enable": true
+  },
+  "eslint.format.enable": true,
+  "eslint.lintTask.enable": true,
+  "eslint.lintTask.options": ".",
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+
+  "files.associations": {
+    "*.js": "javascriptreact",
+    "*rc": "json",
+    ".browserslistrc": "plaintext",
+    ".zshrc": "python"
+  },
+  "files.autoSave": "off",
+  "formattingToggle.affects": [
+    "formatOnSave"
+  ],
+
+  "html.format.indentHandlebars": true,
+  "html.format.indentInnerHtml": true,
+  "html.format.maxPreserveNewLines": 1,
+  "html.format.wrapAttributes": "preserve",
+  "html.format.wrapLineLength": 0,
+  "html.validate.scripts": true,
+  "html.validate.styles": false,
+  "htmlhint.documentSelector": [
+    "html",
+    "htm"
+  ],
+  "htmlhint.options": {
+    "alt-require": true,
+    "attr-lowercase": false,
+    "attr-no-duplication": true,
+    "attr-unsafe-chars": true,
+    "attr-value-double-quotes": true,
+    "attr-value-not-empty": false,
+    "doctype-first": false,
+    "doctype-html5": true,
+    "empty-tag-not-self-closed": true,
+    "head-script-disabled": false,
+    "href-abs-or-rel": false,
+    "id-class-ad-disabled": true,
+    "id-class-value": false,
+    "id-unique": true,
+    "inline-script-disabled": false,
+    "inline-style-disabled": false,
+    "space-tab-mixed-disabled": "space",
+    "spec-char-escape": false,
+    "src-not-empty": true,
+    "style-disabled": false,
+    "tag-pair": true,
+    "tagname-lowercase": false,
+    "title-require": true
+  },
+  "javascript.format.enable": false,
+  "javascript.validate.enable": false,
+  "javascript.format.insertSpaceAfterSemicolonInForStatements": false,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+
+  "prettier.printWidth": 100,
+  "prettier.semi": false,
+  "prettier.singleQuote": true,
+  "prettier.trailingComma": "es5",
+  "prettier.useTabs": false,
+
+  "scss.lint.unknownAtRules": "ignore",
+  "scss.lint.vendorPrefix": "ignore",
+  "sortJSON.contextMenu": {
+    "sortJSON": true,
+    "sortJSONAlphaNum": true,
+    "sortJSONAlphaNumReverse": true,
+    "sortJSONKeyLength": true,
+    "sortJSONKeyLengthReverse": true,
+    "sortJSONReverse": true,
+    "sortJSONType": true,
+    "sortJSONTypeReverse": true,
+    "sortJSONValues": true,
+    "sortJSONValuesReverse": true
+  },
+
+  "window.zoomLevel": 1,
+  "workbench.activityBar.visible": true,
+  "workbench.sideBar.location": "right",
+  "workbench.editor.untitled.hint": "hidden",
+  "markdown.styles": [
+    ".vscode/github-markdown.css"
+  ],
+  "editor.fontSize": 13,
+}
