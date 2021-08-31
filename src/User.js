@@ -2,7 +2,7 @@ import React from 'react'
 
 function User({ user = null }) {
   return (
-    user && (
+    (
       <div>
         <div>
           <b>ID</b>: {user.id}
