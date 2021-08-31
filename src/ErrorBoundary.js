@@ -1,4 +1,5 @@
 import React from "react";
+import * as Sentry from '@sentry/react'
 
 class ErrorBoundary extends React.Component {
   state = {
@@ -14,6 +15,9 @@ class ErrorBoundary extends React.Component {
     this.setState({
       error: true
     })
+    if(process.env.NODE_ENV === 'production'){
+      Sentry.captureException(error, {extra: info});
+    }
   }
 
   render(){
