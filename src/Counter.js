@@ -3,7 +3,12 @@ import React, { useReducer } from 'react'
 class Counter extends React.Component {
 
   state = {
-    counter: 0
+    counter: 0,
+    fixed: 1,
+    updateMe: {
+      toggleMe:false,
+      dontChangeMe:1,
+    }
   }
 
   handleIncrease = () => {
@@ -24,6 +29,7 @@ class Counter extends React.Component {
         <h1>{this.state.counter}</h1>
         <button onClick={this.handleIncrease}>+1</button>
         <button onClick={this.handleDecrease}>-1</button>
+        <p>고정된 값 {this.state.fixed}</p>
       </div>
     )
   }
