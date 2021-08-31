@@ -181,4 +181,5 @@
     ".vscode/github-markdown.css"
   ],
   "editor.fontSize": 13,
+  "editor.formatOnSave": true,
 }
